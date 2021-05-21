@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   [x: string]: any;
   clients$: Client[];
   accounts$: Account[];
-  searchClient?: string;
+  searchClient: string ; 
   constructor(private dataService: DataService) { };
 
   ngOnInit() {

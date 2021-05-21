@@ -1,9 +1,8 @@
 <div class="form-group">
   <input type="text" class="form-control" placeholder="search by name" style="width: 400px;" [(ngModel)]="searchClient"/>
-  {{ searchClient }}
 </div>
 
-<div *ngFor= "let client of clients$ | filter: 'test'"  style="text-align: center">
+<div *ngFor= "let client of clients$ | filter: searchClient"  style="text-align: center">
   <div style="text-align: center;"><mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -12,7 +11,7 @@
     </mat-card-header>
     <mat-card-content>   
       <li>BirthDay : {{ client.birthday }}</li>
-        <li>Name : {{ client.name | uppercase }}</li>
+        <li>Name : {{ client.name }}</li>
         <li>Firstname : {{ client.firstname }}</li>
         <li>Address : {{client.address}}</li> 
     </mat-card-content>

@@ -6,10 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(clientList: Array<any>, search: string): any {
-    console.log(clientList, search);
-
-    if (clientList)
-      return clientList.filter((d)=> d.name.indexOf(search) > -1 )
+    if (clientList && search)
+      return clientList.filter(
+        (client) =>
+          client.name.indexOf(search) > -1 ||
+          client.firstname.indexOf(search) > -1
+    );
     return clientList;
   }
 
